@@ -8,6 +8,6 @@ To add code to the repo follow these steps:
 3. Push your branch to your fork
 4. Make a Pull Request to `pyladies-bratislava:master`
 5. Wait for the review and the merge of your changes.
-6. For questions use our slack channel > #bratislava
+6. For questions use our slack channel > #bratislava (To join pyladies on slack go to > https://slackin.pyladies.com/)
 
 Happy coding :)
