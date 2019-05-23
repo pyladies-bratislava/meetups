@@ -11,3 +11,5 @@ To add code to the repo follow these steps:
 6. For questions use our slack channel > #bratislava (To join pyladies on slack go to > https://slackin.pyladies.com/)
 
 Happy coding :)
+
+Trial...
