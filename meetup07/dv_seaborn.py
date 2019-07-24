@@ -1,6 +1,3 @@
-#from IPython import get_ipython
-#get_ipython().run_line_magic('matplotlib', 'qt5')
-
 import matplotlib
 matplotlib.use("Qt5Agg")
 
