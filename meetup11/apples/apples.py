@@ -36,7 +36,6 @@ all_sprites.add(basket)
 
 # Sounds
 yeah_sound = pygame.mixer.Sound("yeah.ogg")
-oh_sound = pygame.mixer.Sound("oh.ogg")
 
 # Run until the user asks to quit
 running = True
