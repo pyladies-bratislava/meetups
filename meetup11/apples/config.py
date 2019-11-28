@@ -1,7 +1,7 @@
 # Screen size
-SCREEN_WIDTH = 600
+SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 400
-BACKGROUND_COLOR = 255, 255, 255  # White
+BACKGROUND_COLOR = 0, 0, 0  # Black
 
 # Global counters of apples
 APPLES_IN_BASKET = 0

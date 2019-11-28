@@ -1,9 +1,12 @@
 import pygame
-from pygame.locals import K_ESCAPE, KEYDOWN
+from pygame.locals import K_ESCAPE, KEYDOWN, RLEACCEL
 
 import config
 from sprites import Apple, Basket
 
+
+# Setup for sounds. Defaults are good.
+pygame.mixer.init()
 
 # Initialize pygame
 pygame.init()
@@ -30,6 +33,10 @@ basket = Basket()
 apples = pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 all_sprites.add(basket)
+
+# Sounds
+yeah_sound = pygame.mixer.Sound("yeah.ogg")
+oh_sound = pygame.mixer.Sound("oh.ogg")
 
 # Run until the user asks to quit
 running = True
@@ -85,6 +92,7 @@ while running:
     if apple_in_basket:
         # If so, then remove the player and stop the loop
         config.APPLES_IN_BASKET += 1
+        yeah_sound.play()
         apple_in_basket.kill()
 
     # Show the amount of apples in the basket and the fallen ones
@@ -93,16 +101,13 @@ while running:
     screen.blit(apple_basket_counter, (config.SCREEN_WIDTH - 40, 10))
     screen.blit(apple_floor_counter, (10, 10))
     # Show the time
-    screen.blit(myfont.render(counter_text, True, (0, 0, 0)), (280, 10))
+    screen.blit(myfont.render(counter_text, True, (255, 255, 255)), (config.SCREEN_WIDTH / 2, 10))
 
     # Flip everything into the display
     pygame.display.flip()
 
     # Ensure program maintains a rate of 30 frames per second
     clock.tick(30)
-
-    # Move the apple down
-    #v_apple_position += apple_step
 
 # Done! Time to quit.
 print("You caught {} apples".format(config.APPLES_IN_BASKET))

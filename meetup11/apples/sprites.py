@@ -1,7 +1,7 @@
 import random
 
 import pygame
-from pygame.locals import K_LEFT, K_RIGHT
+from pygame.locals import K_LEFT, K_RIGHT, RLEACCEL
 
 import config
 
@@ -55,8 +55,8 @@ class Apple(pygame.sprite.Sprite):
 
     def __init__(self):
         super(Apple, self).__init__()
-        self.surf = pygame.Surface((self.diameter, self.diameter))
-        self.surf.fill(self.color)
+        self.surf = pygame.image.load("apple.png").convert()
+        self.surf.set_colorkey((255, 255, 255), RLEACCEL)
         self.rect = self.surf.get_rect(
             center=(
                 random.randint(self.diameter, config.SCREEN_WIDTH),
@@ -69,6 +69,5 @@ class Apple(pygame.sprite.Sprite):
     def update(self):
         self.rect.move_ip(0, self.speed)
         if self.rect.bottom >= config.SCREEN_HEIGHT:
-            #global APPLES_ON_FLOOR
             config.APPLES_ON_FLOOR += 1
             self.kill()
