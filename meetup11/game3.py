@@ -10,21 +10,38 @@ pygame.init()
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 400
 BACKGROUND_COLOR = 255, 255, 255  # White
-CIRCLE_COLOR = 0, 0, 255
+PLAYER_COLOR = 0, 0, 255  # Blue
 RADIUS = 10
 
 # Set up the drawing window
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-# Player variables
-h_position = 10
-v_position = 10
+# Setup the clock for a decent framerate
+clock = pygame.time.Clock()
 
 
 # Define a Player object by extending pygame.sprite.Sprite
 # The surface drawn on the screen is now an attribute of 'player'
 class Player(pygame.sprite.Sprite):
-    pass
+    def __init__(self):
+        super().__init__()
+        self.surf = pygame.Surface((100, 30))
+        self.surf.fill(PLAYER_COLOR)
+        self.rect = self.surf.get_rect()
+
+    def update(self, pressed_keys):
+        # Let's move the player
+        if pressed_keys[K_LEFT]:
+            self.rect.move_ip(-5, 0)
+        if pressed_keys[K_RIGHT]:
+            self.rect.move_ip(5, 0)
+        if pressed_keys[K_DOWN]:
+            self.rect.move_ip(0, 5)
+        if pressed_keys[K_UP]:
+            self.rect.move_ip(0, -5)
+
+
+player = Player()
 
 
 # Run until the user asks to quit
@@ -38,27 +55,25 @@ while running:
             # Was it the Escape key? If so, stop the loop.
             if event.key == K_ESCAPE:
                 running = False
-            # Let's move the player
-            if event.key == K_LEFT:
-                h_position -= 5
-            if event.key == K_RIGHT:
-                h_position += 5
-            if event.key == K_DOWN:
-                v_position += 5
-            if event.key == K_UP:
-                v_position -= 5
 
         if event.type == pygame.QUIT:
             running = False
 
+    # Get the set of keys pressed and check for user input
+    pressed_keys = pygame.key.get_pressed()
+    player.update(pressed_keys)
+
     # Fill the background with white
     screen.fill(BACKGROUND_COLOR)
 
-    # Draw a solid blue circle in the center
-    pygame.draw.rect(screen, CIRCLE_COLOR, Rect(h_position, v_position, 10, 30))
+    # Draw a player
+    screen.blit(player.surf, player.rect)
 
     # Flip the display
     pygame.display.flip()
+
+    # Ensure program maintains a rate of 30 frames per second
+    clock.tick(30)
 
 # Done! Time to quit.
 pygame.quit()
