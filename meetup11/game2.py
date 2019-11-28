@@ -47,7 +47,7 @@ while running:
     # Fill the background with white
     screen.fill(BACKGROUND_COLOR)
 
-    # Draw a solid blue circle in the center
+    # Draw a rectangle player
     pygame.draw.rect(screen, PLAYER_COLOR, Rect(h_position, v_position, 10, 30))
 
     # Flip the display
