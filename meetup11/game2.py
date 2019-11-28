@@ -10,8 +10,7 @@ pygame.init()
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 400
 BACKGROUND_COLOR = 255, 255, 255  # White
-CIRCLE_COLOR = 0, 0, 255
-RADIUS = 10
+PLAYER_COLOR = 0, 0, 255
 
 # Set up the drawing window
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -49,7 +48,7 @@ while running:
     screen.fill(BACKGROUND_COLOR)
 
     # Draw a solid blue circle in the center
-    pygame.draw.rect(screen, CIRCLE_COLOR, Rect(h_position, v_position, 10, 30))
+    pygame.draw.rect(screen, PLAYER_COLOR, Rect(h_position, v_position, 10, 30))
 
     # Flip the display
     pygame.display.flip()
