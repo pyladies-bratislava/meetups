@@ -5,8 +5,9 @@ Repository for the PyLadies Bratislava Meetups.
 To run the code from a meetup do the following:
 1. Create a virtual environment inside the meetup's directory > `python3 -m venv .env`
 In this example the virtualenv will be located in the `.env` directory.
-2. Check if there is a `requirements.txt` file. If so install them > `pip install -r requirements.txt`
-3. Check which python files exist in the folder and run them.
+2. Activate the environment > `source .env/bin/activate` (linux/mac) or `.\.env\Scripts\activate.bat`
+3. Check if there is a `requirements.txt` file. If so install them > `pip install -r requirements.txt`
+4. Check which python files exist in the folder and run them.
 
 To add code to the repo follow these steps:
 1. Clone the repository
