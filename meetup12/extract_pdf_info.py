@@ -26,4 +26,6 @@ for pdf_filename in os.listdir(pdf_dir):
     print("*** Parsing {} ***".format(pdf_filename))
     raw_text = parser.from_file(os.path.join(pdf_dir, pdf_filename))
     raw_list = raw_text['content'].splitlines()
-    print(raw_list)
+    all_text = ' '.join(text for text in raw_list if text)
+    all_text = ' '.join(all_text.split())
+    print(all_text)
