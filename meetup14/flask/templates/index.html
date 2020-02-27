@@ -1,0 +1,7 @@
+<!doctype html>
+{% extends "base.html" %}
+{% block title %}Password Generator{% endblock %}
+{% block content %}
+<a href="{{ url_for('.generate') }}"><h1>Pasword Generator</h1></a>
+<p>{{ password }}</p>
+{% endblock %}
