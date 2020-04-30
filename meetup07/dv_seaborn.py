@@ -13,15 +13,17 @@ warnings.filterwarnings('ignore')
 # Optional but changes the figure size
 fig = plt.figure(figsize=(12, 8))
 
-#df = pd.read_csv('https://vincentarelbundock.github.io/Rdatasets/csv/datasets/mtcars.csv')
-#df = pd.read_csv('/home/filipa/Downloads/mtcars.csv')
-df = pd.read_csv('/home/filipa/Downloads/Popular_Baby_Names.csv')
+df = pd.read_csv('names.csv')
 
-# Line
-#ax = sns.regplot(x="Child's First Name", y="Count", data=df)
+# Filtered as example but not used
+filtered = df["Count"] == 5
 
-# Histogram
-sns.distplot(df.Count, kde=False)
+# Countplot that is not so useful for this data
+#sns.countplot(x=df["Child's First Name"], data=df[filtered])
+#plt.xticks(rotation=90)
+
+# Barplot
+sns.barplot(x="Child's First Name", y="Count", data=df)
 
 # Show the plot
 plt.show()
