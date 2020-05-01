@@ -17,6 +17,14 @@ fig = plt.figure(figsize=(12, 8))
 # names_large.csv contains a large amount of data while names.csv is small
 df = pd.read_csv('names.csv')
 
+# Basics about the dataframe
+# df. head() - show the first 5 rows of dataframe
+# df.tail() - show the last 5 rows of dataframe
+# df. shape - show number of rows and columns
+# df.rename(columns={"Child's First Name":'Child_name'}, inplace=True) - rename inappropriate names of column
+# df.col_name.nunique() - number of unique values in column / unique - show list of unique values in column
+# df.dtypes - shows the data type of each column
+
 # Filtered as example but not used
 filtered = df["Count"] == 5
 
