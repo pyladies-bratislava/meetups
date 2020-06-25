@@ -2,7 +2,7 @@ import unittest
 
 import pytest
 
-from oop import Dog
+from code.oop import Dog
 
 
 # unittest tests
@@ -13,10 +13,6 @@ class TestOop(unittest.TestCase):
 
     def test_are_dogs_hungry(self):
         pass
-
-
-if __name__ == '__main__':
-    unittest.main()
 
 
 # pytest tests
