@@ -2,7 +2,7 @@ import unittest
 
 import pytest
 
-from code.oop import Dog
+from ..code.oop import Dog
 
 
 # unittest tests
