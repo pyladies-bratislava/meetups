@@ -7,6 +7,9 @@ def generate_password(size=8):
     Must contain at least one: uppercase, lowercase, number and special character
     """
 
+    if size < 4:
+        raise ValueError("Minimum size is 3.")
+
     chars = (ascii_lowercase + ascii_uppercase + digits + punctuation)
 
     # Get one of each group of mandatory characters
