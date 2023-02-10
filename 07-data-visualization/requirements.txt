@@ -1,4 +1,4 @@
-ipython==7.16.3
+ipython==8.10.0
 jupyter==1.0.0
 PyQt5==5.13.0  # For linux
 seaborn==0.9.0
